@@ -49,7 +49,7 @@ function qwetheme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'qwetheme' ),
+			'header-menu' => esc_html__( 'Header Menu', 'qwetheme' ),
 		)
 	);
 
@@ -156,7 +156,7 @@ function qwetheme_scripts() {
 	wp_enqueue_script('jquery-3.3.1.min', get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js', array(), '3.3.1', true );
 	wp_enqueue_script('qwetheme-jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array(), '1.0', true );
 	wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '1.0', true );
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0', true );
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '1.0', true );
 	wp_enqueue_script('owl.carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '1.0', true );
 	wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array(), '1.0', true );
 	wp_enqueue_script('sticky', get_template_directory_uri() . '/assets/js/jquery.sticky.js', array(), '1.0', true );
@@ -174,6 +174,23 @@ function qwetheme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'qwetheme_scripts' );
+
+
+
+
+function qwetheme_add_link_atts($atts) {
+	$atts['class'] = "nav-link";
+	return $atts;
+  }
+  add_filter( 'nav_menu_link_attributes', 'qwetheme_add_link_atts');
+
+ 
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature.

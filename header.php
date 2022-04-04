@@ -17,12 +17,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	
+	
+	<script src="https://kit.fontawesome.com/6cbe9b904a.js" crossorigin="anonymous"></script>
+	
+	
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700|Anton" rel="stylesheet">
+	
+	
 	
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 <div class="site-wrap"  id="home-section">
 
@@ -43,62 +49,26 @@
           
             
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary">Foundation</a>
+              <a href="<?php echo esc_url(home_url("/")); ?>"  class="text-black"><span class="text-primary"><?php bloginfo( 'name' ); ?></a>
             </div>
             
               <nav class="site-navigation text-center ml-auto" role="navigation">
 
-                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="#home-section" class="nav-link">Home</a></li>
-                  <li><a href="#about-section" class="nav-link">About</a></li>
-                  <li><a href="#discover-section" class="nav-link">Discover</a></li>
-                  <li><a href="#donate-section" class="nav-link">Donate</a></li>
-                  <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                </ul>
-              </nav>
-          
-            
-
-          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-        </div>
-      </div>
-
-<!--
-<div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'qwetheme' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$qwetheme_description = get_bloginfo( 'description', 'display' );
-			if ( $qwetheme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $qwetheme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'qwetheme' ); ?></button>
-			<?php
+			  <?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
+					'theme_location' => 'header-menu',
 					'menu_id'        => 'primary-menu',
+					'menu_class'     => 'site-menu main-menu js-clone-nav ml-auto d-none d-lg-block',
+					'container'      => ''
+			
 				)
 			);
 			?>
-		</nav>
-	</header>
-		-->
+			</nav>
+          
+             <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+		</header>
