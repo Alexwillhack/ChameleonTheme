@@ -50,6 +50,7 @@ function qwetheme_setup() {
 	register_nav_menus(
 		array(
 			'header-menu' => esc_html__( 'Header Menu', 'qwetheme' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'qwetheme' ),
 		)
 	);
 
@@ -177,14 +178,12 @@ add_action( 'wp_enqueue_scripts', 'qwetheme_scripts' );
 
 
 
-
+// hook.add class for li
 function qwetheme_add_link_atts($atts) {
 	$atts['class'] = "nav-link";
 	return $atts;
   }
-  add_filter( 'nav_menu_link_attributes', 'qwetheme_add_link_atts');
-
- 
+ // add_filter( 'nav_menu_link_attributes', 'add_link_atts');
 
 
 

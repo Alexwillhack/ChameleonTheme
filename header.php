@@ -55,7 +55,12 @@
               <nav class="site-navigation text-center ml-auto" role="navigation">
 
 			  <?php
-			wp_nav_menu(
+			
+      add_filter( 'nav_menu_link_attributes', 'qwetheme_add_link_atts');
+      
+      
+      
+      wp_nav_menu(
 				array(
 					'theme_location' => 'header-menu',
 					'menu_id'        => 'primary-menu',
@@ -64,7 +69,11 @@
 			
 				)
 			);
-			?>
+			
+      remove_filter( 'nav_menu_link_attributes', 'qwetheme_add_link_atts');
+      
+      
+      ?>
 			</nav>
           
              <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
