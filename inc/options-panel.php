@@ -320,9 +320,10 @@ Redux::set_section(
 	array(
 		'title'            => esc_html__( 'Global Options', 'your-textdomain-here' ),
 		'id'               => 'global',
-		'desc'             => esc_html__( 'Some descriptions', 'your-textdomain-here' ),
+		'desc'             => esc_html__( 'Redux in the house.', 'your-textdomain-here' ),
 		'customizer_width' => '400px',
 		'icon'             => 'el el-home',
+		
 	)
 );
 
@@ -332,12 +333,18 @@ Redux::set_section(
 		'title'            => esc_html__( 'Footer Data', 'your-textdomain-here' ),
 		'id'               => 'global-footer',
 		'subsection'       => true,
-		'desc'             => esc_html__( 'Some descriptions', 'your-textdomain-here' ),
+		'desc'             => esc_html__( 'Redux options for footer', 'your-textdomain-here' ),
 		'customizer_width' => '400px',
 		'fields'           => array (
 			array(
 				'title' => esc_html__( 'Title one', 'your-textdomain-here' ),
 				'id'    => 'titleone',
+				'type'  => 'text',
+				'default' => '',
+			),
+			array(
+				'title' => esc_html__( 'Descriptions for Title#1', 'your-textdomain-here' ),
+				'id'    => 'title1desc',
 				'type'  => 'text',
 				'default' => '',
 			),
@@ -353,15 +360,9 @@ Redux::set_section(
 				'type'  => 'text',
 				'default' => '',
 			),
-		
-			array(
-				'title' => esc_html__( 'Descriptions one', 'your-textdomain-here' ),
-				'id'    => 'descriptionsone',
-				'type'  => 'text',
-				'default' => '',
-			),array(
-				'title' => esc_html__( 'Descriptions two', 'your-textdomain-here' ),
-				'id'    => 'descriptionstwo',
+		    array(
+				'title' => esc_html__( 'Descriptions for Title#3', 'your-textdomain-here' ),
+				'id'    => 'title3desc',
 				'type'  => 'text',
 				'default' => '',
 			),
@@ -377,9 +378,7 @@ Redux::set_section(
 				'type'  => 'text',
 				'default' => '',
 			),
-		
-		
-	)
+		)
 ));
 
 
