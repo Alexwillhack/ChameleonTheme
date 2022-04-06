@@ -1,14 +1,18 @@
+<?php global $qwetheme_options; ?>
+
+
+
 <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-8">
-                <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                <h2 class="footer-heading mb-4"><?php if($qwetheme_options['titleone']){echo esc_attr($qwetheme_options['titleone']); } ?></h2>
+                <p><?php if($qwetheme_options['descriptionsone']){echo esc_attr($qwetheme_options['descriptionsone']); } ?></p>
               </div>
               <div class="col-md-4 ml-auto">
-                <h2 class="footer-heading mb-4">Features</h2>
+                <h2 class="footer-heading mb-4"><?php if($qwetheme_options['titletwo']){echo esc_attr($qwetheme_options['titletwo']); } ?></h2>
                 
                 <?php
 			wp_nav_menu(
@@ -29,28 +33,17 @@
 
             <form class="mb-5">
               <div class="mb-5">
-                <h2 class="footer-heading mb-4">Some Paragraph</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nostrum libero iusto dolorum vero atque aliquid.</p>
+                <h2 class="footer-heading mb-4"><?php if($qwetheme_options['titlethree']){echo esc_attr($qwetheme_options['titlethree']); } ?> </h2>
+                <p><?php if($qwetheme_options['descriptionstwo']){echo esc_attr($qwetheme_options['descriptionstwo']); } ?></p>
               </div>
-              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
-                  </div>
-                </div>
-              </form>
+              <h2 class="footer-heading mb-4"><?php if($qwetheme_options['titlefour']){echo esc_attr($qwetheme_options['titlefour']); } ?></h2>
+              
+              <?php if($qwetheme_options['mailformwidgets']) echo do_shortcode(esc_attr($qwetheme_options['mailformwidgets'])); ?>
+              </div>
 
-
-              <h2 class="footer-heading mb-4">Follow Us</h2>
+             
 			  
-			    <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="fa-brands fa-facebook-f"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="fa-brands fa-twitter"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="fa-brands fa-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="fa-brands fa-linkedin-in"></span></a>
-
-            </div>
+            
           </div>
         </div>
         <div class="row pt-5 mt-5 text-center">

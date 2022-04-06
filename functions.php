@@ -178,21 +178,27 @@ add_action( 'wp_enqueue_scripts', 'qwetheme_scripts' );
 
 
 
-// hook.add class for li
+
+
+
+
+
+
+
+
+
+
+
+// Hook.Add class for link
 function qwetheme_add_link_atts($atts) {
 	$atts['class'] = "nav-link";
 	return $atts;
   }
- // add_filter( 'nav_menu_link_attributes', 'add_link_atts');
+ 
+
+//Redux Theme Options Config
+require get_template_directory() . '/inc/options-panel.php';
 
 
 
-
-
-
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
